@@ -15,4 +15,12 @@ router.get('/', function(req, res, next) {
   res.send(JSON.stringify(users));
 });
 
+/* POST users. */
+router.post('/', function(req, res, next) {
+  const newUser = req.body
+  users.push(newUser)
+  res.setHeader('Content-Type', 'application/json')
+  res.send(JSON.stringify(newUser));
+});
+
 module.exports = router;
